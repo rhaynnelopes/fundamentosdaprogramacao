@@ -1,0 +1,76 @@
+import java.util.Scanner;
+
+public class Exercicio1Lista3 {
+    public static void main(String args[]) {
+
+        double nUm, nDois, nTres;
+        double nMaior = 0;
+        int cont = 0;
+
+        Scanner numeros = new Scanner(System.in);
+
+        while (cont < 15) {
+            System.out.println("Digite um número:");
+            nUm = numeros.nextDouble();
+
+            System.out.println("Digite um número:");
+            nDois = numeros.nextDouble();
+
+            System.out.println("Digite um número:");
+            nTres = numeros.nextDouble();
+
+            cont = cont + 3;
+
+            if (nUm == nDois || nDois == nTres || nUm == nTres) {
+
+                System.out.println("Pelo menos dois números são iguais, escreva três números diferentes");
+                return; 
+
+            } else if (nUm > nDois && nDois < nTres) {
+
+                System.out.println("Os números em ordem crescente são:"+ (nDois + ", " + nTres + ", " + nUm + ", "));
+                if (nMaior < nUm){
+                    nMaior = nUm;
+                    System.out.println("O maior número lido foi: " + nMaior);
+                }
+
+            } else if (nUm > nTres && nTres < nDois)  {
+
+                System.out.println("Os números em ordem crescente são:"+ (nTres + ", " + nDois + ", " + nUm + ", "));
+                if (nMaior < nUm){
+                    nMaior = nUm;
+                    System.out.println("O maior número lido foi: " + nMaior);
+                }
+
+            } else if (nDois > nTres && nTres < nUm) {
+                System.out.println("Os números em ordem crescente são:"+ (nTres + ", " + nUm + ", " + nDois + ", "));
+                if (nMaior < nDois){
+                    nMaior = nDois;
+                    System.out.println("O maior número lido foi: " + nMaior);
+                }
+
+            } else if (nDois > nTres && nUm < nTres) {
+                System.out.println("Os números em ordem crescente são:"+ (nUm + ", " + nTres + ", " + nDois + ", "));
+                if (nMaior < nDois){
+                    nMaior = nDois;
+                    System.out.println("O maior número lido foi: " + nMaior);
+                }
+
+            } else if (nTres > nUm && nDois < nUm) {
+                System.out.println("Os números em ordem crescente são:"+ (nDois + ", " + nUm + ", " + nTres + ", "));
+                if (nMaior < nTres){
+                    nMaior = nTres;
+                    System.out.println("O maior número lido foi: " + nMaior);
+                }
+
+            } else if (nTres > nDois && nUm < nDois) {
+                System.out.println("Os números em ordem crescente são:"+ (nUm + ", " + nDois + ", " + nTres + ", "));
+                if (nMaior < nTres){
+                    nMaior = nTres;
+                    System.out.println("O maior número lido foi: " + nMaior);
+                }
+
+            }
+        }
+    }
+}
